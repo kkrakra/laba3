@@ -19,7 +19,7 @@ int decrease(int value) {
     return 1;
 }
 
-int task() {
+int task(int *array, int* capacity_p,int *size_p) {
     int new_array_size = 0;
 
         for (int i=0; i< (*capacity_p); i++) {
@@ -34,9 +34,9 @@ int task() {
 
     printf("Длина нового массива будет - %d\n", new_array_size);
     int* array2 = NULL;
-    array2 = (int*)malloc(new_array_size*size_of_item);
+    array2 = (int*)malloc(new_array_size*sizeof(int));
     int j = 0;
-    for (int i=0; i<capacity; i++) {
+    for (int i = 0; i < *capacity_p; i++) {
         printf("%d\n", array[i]);
         if (decrease(array[i]) == 1) {
             printf("%d - добавлено в новый массив\n", array[i]);
@@ -45,7 +45,7 @@ int task() {
         }
     }
 
-    for (int i=0; i<capacity; i++) {
+    for (int i=0; i<*capacity_p; i++) {
         printf("%d\n", array[i]);
         if (decrease(array[i]) == 1) {
             printf("%d - удалено из старого массива\n", array[i]);
@@ -56,15 +56,15 @@ int task() {
 
 
     // посмотрим новый массив
-    printf("%d, Новый массив - ");
+    printf("Новый массив - ");
     for (int i=0; i<new_array_size; i++) {
         printf("%d ", array2[i]);
     }
     printf("\n");
 
     // посмотрим измененный старый массив
-    printf("%d, Старый массив - ");
-    for (int i=0; i<capacity; i++) {
+    printf(" Старый массив - ");
+    for (int i=0; i<*capacity_p; i++) {
         printf("%d ", array[i]);
     }
     printf("\n");
