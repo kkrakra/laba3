@@ -138,13 +138,13 @@ int main() {
                 break;
             case 4:
                 printf("4. Индивидуальное задание\n");
-                int new_size;
-                int* new_array = local_array(array, size_p, capacity_p, &new_size);
-                printf ("Новый массив: ");
-                print_array(new_array, new_size);
-                printf("Старый массив: ");
-                print_array(array, size);
-                break;
+                // int new_size;
+                // int* new_array = local_array(array, size_p, capacity_p, &new_size);
+                // printf ("Новый массив: ");
+                // print_array(new_array, new_size);
+                // printf("Старый массив: ");
+                // print_array(array, size);
+                // break;
             case 5:
                 printf("5. Вывод массива\n");
                 printf("Memory address of array - %p\n", &array);
