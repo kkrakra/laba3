@@ -3,6 +3,6 @@
 
 int decreasing(int value);
 // int* local_array(int* array, int* size_p, int *capacity_p, int* new_size);
-int task(int *array, int* capacity_p,int *size_p);
+int task(int *array, int *size_p);
 
 #endif

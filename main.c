@@ -139,15 +139,15 @@ int main() {
             case 4:
                 printf("4. Индивидуальное задание\n");
                 //int new_size = 0;
-                task(array, capacity_p, size_p);
+                task(array, size_p);
                 //printf ("Новый массив: ");
                 //print_array(&new_array, new_size);
                 //printf("Старый массив: ");
-                print_array(array, size);
+                //print_array(array, size);
                 break;
             case 5:
                 printf("5. Вывод массива\n");
-                printf("Memory address of array - %p\n", &array);
+                //printf("Memory address of array - %p\n", &array);
 
                 print_array(array, size);
 
