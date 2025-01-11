@@ -77,8 +77,11 @@ int insert_item_at_index(int* array, int* size, int index, int new_item) {
         printf("неверный индекс\n");
         return 1;
     }
+    if (*size == *array / 2) {
+        add_capacity(&array, size);
+    }
     
-    array = realloc (array, *size * sizeof(int));
+    // array = realloc (array, *size * sizeof(int));
     
     for (int i = *size; i > index; i--) {
             array[i] = array[i - 1];
@@ -101,22 +104,43 @@ int remove_item_at_index(int* array, int* size, int index) {
         printf("Неверный индекс\n");
         return 1;
     }
+    if (*size == 0) {
+    printf("Массив пуст. Не возможно удалить элемент.\n");
+    return 1;
+}
+
 
     for (int i = index; i < *size - 1; i++) {
         array[i] = array[i + 1];
     }
-
     (*size)--;
+
+    if (*size == *array / 4 && *size > 0) {
+        decrease_capacity(&array, size);
+    }
+
 
     return 0;
 }
 
 
-int print_array(int* arr, int size) {
-        for (int i = 0; i < size; i++) {
-        printf("%d ", arr[i]);
+// int print_array(int* arr, int size) {
+//         for (int i = 0; i < size; i++) {
+//         printf("%d ", arr[i]);
+//     }
+//     printf("\n");
+
+//     return 0;
+// }
+
+void print_array(int* array, int size) {
+    if (size == 0) {
+        printf("Массив пуст\n");
+        return;
+    }
+    
+    for (int i = 0; i < size; i++) {
+        printf("%d ", array[i]);
     }
     printf("\n");
-
-    return 0;
 }
